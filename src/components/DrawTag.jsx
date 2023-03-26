@@ -2,7 +2,6 @@ import { Tag } from "antd";
 import { COLORS } from "../styles/config";
 
 const DrawCtg = (ctg, idx) => {
-  console.log("99999", ctg);
   switch (ctg) {
     case "획득 불가":
       return (

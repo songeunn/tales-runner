@@ -7,7 +7,7 @@ import GuideNote from "../../components/GuideNote";
 import TitleList from "../../components/TitleList";
 import FilterTags from "../../components/FilterTags";
 
-const MainPage = () => {
+const Root = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -50,4 +50,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Root;

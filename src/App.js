@@ -1,7 +1,20 @@
 import styled from "styled-components";
-import MainPage from "./pages/MainPage/MainPage";
+import Root from "./routes/Root/root";
 import { COLORS } from "./styles/config";
 import { ConfigProvider } from "antd";
+import ReactGA from "react-ga";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID; // 환경 변수에 저장된 추적ID 가져오기
+ReactGA.initialize(gaTrackingId); // react-ga 초기화 및 debug 사용 { debug: true }
+ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+  },
+]);
 
 function App() {
   return (
@@ -14,7 +27,7 @@ function App() {
     >
       <Container>
         <MobileContainer>
-          <MainPage />
+          <RouterProvider router={router} />
         </MobileContainer>
       </Container>
     </ConfigProvider>
