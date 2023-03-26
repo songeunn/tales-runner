@@ -37,7 +37,10 @@ function App() {
 const Container = styled.div`
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
   display: flex;
   justify-content: center;
   background-color: ${COLORS.BG};
@@ -47,7 +50,8 @@ const MobileContainer = styled.div`
   max-width: 420px;
   width: 100%;
   padding: 20px;
-  border: 1px solid ${COLORS.BORDER};
+  border-left: 1px solid ${COLORS.BORDER};
+  border-right: 1px solid ${COLORS.BORDER};
   background-color: ${COLORS.BG};
   overflow: scroll;
   -ms-overflow-style: none; /* IE */
