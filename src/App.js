@@ -37,10 +37,10 @@ function App() {
 const Container = styled.div`
   position: fixed;
   width: 100vw;
-  min-height: 100vh;
-  @supports (-webkit-touch-callout: none) {
-    min-height: -webkit-fill-available;
-  }
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: fill-available;
+
   display: flex;
   justify-content: center;
   background-color: ${COLORS.BG};
