@@ -22,6 +22,7 @@ function App() {
       theme={{
         token: {
           fontFamily: "Pretendard",
+          fontSize: 15,
         },
       }}
     >

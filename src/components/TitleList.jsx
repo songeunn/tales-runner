@@ -15,7 +15,7 @@ const TitleList = (options) => {
       renderItem={(item, idx) => (
         <List.Item
           style={{
-            color: item.color === "effect" ? "#fff" : switchColor(item.color),
+            color: switchColor(item.color),
           }}
           key={idx}
         >

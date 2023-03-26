@@ -1,5 +1,6 @@
 export const COLORS = {
   BG: "#1d1f26",
+  TEXT: "#c2c2cc",
   BORDER: "#464c56",
   PINK: "violet",
   RED: "#f55f91",
@@ -17,9 +18,6 @@ export const COLORS = {
 export const switchColor = (color) => {
   let realColor = "";
   switch (color) {
-    case "white":
-      realColor = "white";
-      break;
     case "pink":
       realColor = COLORS.PINK;
       break;
@@ -47,8 +45,10 @@ export const switchColor = (color) => {
     case "purple":
       realColor = COLORS.PURPLE;
       break;
+    case "white":
+    case "effect":
     default:
-      realColor = "black";
+      realColor = COLORS.TEXT;
       break;
   }
   return realColor;

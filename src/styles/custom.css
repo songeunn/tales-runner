@@ -7,7 +7,6 @@
 .newCarousel {
   border: 1px solid #464c56;
   border-radius: 8px;
-  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +18,8 @@
   font-size: 13px;
   padding: 10px 15px;
   background-color: #28549cb9;
-  color: #ffffffd9;
+  color: var(--text-color);
 }
 .guideAlert .ant-alert-message {
-  color: #ffffffd9;
+  color: var(--text-color);
 }
