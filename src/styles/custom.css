@@ -14,3 +14,13 @@
   text-align: center;
   line-height: 16px;
 }
+.guideAlert {
+  font-weight: 400;
+  font-size: 13px;
+  padding: 10px 15px;
+  background-color: #28549cb9;
+  color: #ffffffd9;
+}
+.guideAlert .ant-alert-message {
+  color: #ffffffd9;
+}

@@ -2,14 +2,16 @@ export const COLORS = {
   BG: "#1d1f26",
   BORDER: "#464c56",
   PINK: "violet",
-  RED: "indianred",
+  RED: "#f55f91",
   ORANGE: "darkorange",
   LIGHTORANGE: "orange",
   YELLOW: "yellow",
-  GREEN: "limegreen",
+  GREEN: "#00ff00",
   BLUE: "deepskyblue",
   MINT: "mediumspringgreen",
   PURPLE: "mediumpurple",
+  ERROR: "#fa5252",
+  UNIQUE: "#7950f2",
 };
 
 export const switchColor = (color) => {

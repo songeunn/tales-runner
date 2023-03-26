@@ -1,14 +1,23 @@
 import styled from "styled-components";
-import MainPage from "./components/MainPage/MainPage";
+import MainPage from "./pages/MainPage/MainPage";
 import { COLORS } from "./styles/config";
+import { ConfigProvider } from "antd";
 
 function App() {
   return (
-    <Container>
-      <MobileContainer>
-        <MainPage />
-      </MobileContainer>
-    </Container>
+    <ConfigProvider
+      theme={{
+        token: {
+          fontFamily: "Pretendard",
+        },
+      }}
+    >
+      <Container>
+        <MobileContainer>
+          <MainPage />
+        </MobileContainer>
+      </Container>
+    </ConfigProvider>
   );
 }
 
