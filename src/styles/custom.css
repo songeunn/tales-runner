@@ -26,3 +26,11 @@
 .list-item:hover {
   background-color: #24282d;
 }
+.list-item:first-child:hover {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.list-item:last-child:hover {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
