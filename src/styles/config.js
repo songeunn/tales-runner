@@ -46,7 +46,6 @@ export const switchColor = (color) => {
       realColor = COLORS.PURPLE;
       break;
     case "white":
-    case "effect":
     default:
       realColor = COLORS.TEXT;
       break;

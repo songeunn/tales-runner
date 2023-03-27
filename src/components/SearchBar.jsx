@@ -1,20 +1,38 @@
-import { SearchOutlined } from "@ant-design/icons";
-import { AutoComplete, Button, Space } from "antd";
+import { AutoComplete, Col } from "antd";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { search } from "../redux/titleSlice";
 
 const SearchBar = (optionSorted) => {
+  const { data } = optionSorted;
+  const [results, setResults] = useState(data);
+
+  const dispatch = useDispatch();
+
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      dispatch(search(results));
+    }
+  };
+
+  const getPanelValue = (searchText) =>
+    !searchText
+      ? dispatch(search(data))
+      : data.filter((option) => {
+          const regex = new RegExp(searchText, "gi");
+          return option.title.match(regex);
+        });
+
   return (
-    <Space>
+    <Col span={24}>
       <AutoComplete
-        style={{ width: "100%" }}
+        className="search-bar"
         size="large"
-        options={optionSorted}
-        placeholder="🎖️ 칭호 검색"
-        filterOption={(inputValue, option) =>
-          option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-        }
+        onKeyDown={(e) => onKeyPress(e)}
+        onSearch={(text) => setResults(getPanelValue(text))}
+        placeholder="🔍 칭호를 검색해보세요"
       />
-      <Button size="large" icon={<SearchOutlined />} />
-    </Space>
+    </Col>
   );
 };
 

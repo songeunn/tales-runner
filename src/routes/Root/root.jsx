@@ -5,22 +5,25 @@ import { ref, onValue } from "firebase/database";
 import UpdatedTitle from "../../components/UpdatedTitle";
 import GuideNote from "../../components/GuideNote";
 import TitleList from "../../components/TitleList";
-import FilterTags from "../../components/FilterTags";
+import SearchBar from "../../components/SearchBar";
+import { useDispatch } from "react-redux";
+import { search } from "../../redux/titleSlice";
 
 const Root = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  const fetchData = async () => {
-    const dataRef = ref(database, "/title");
-    await onValue(dataRef, (snapshot) => {
-      const firebaseData = snapshot.val();
-      setData(firebaseData);
-      setTimeout(() => setIsLoading(false), 500);
-    });
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    const titleRef = ref(database, "title");
+
+    const fetchData = async () => {
+      await onValue(titleRef, (snapshot) => {
+        const firebaseData = snapshot.val();
+        setData(firebaseData);
+        setTimeout(() => setIsLoading(false), 500);
+      });
+    };
     fetchData();
   }, []);
 
@@ -29,6 +32,8 @@ const Root = () => {
 
   const optionSorted =
     data && data.sort((a, b) => a.title.localeCompare(b.title));
+
+  !isLoading && dispatch(search(optionSorted));
 
   return (
     <Row>
@@ -41,7 +46,7 @@ const Root = () => {
           <Space direction="vertical" size="large">
             <UpdatedTitle data={updated} />
             <GuideNote />
-            {/* <FilterTags /> */}
+            <SearchBar data={optionSorted} />
             <TitleList data={optionSorted} />
           </Space>
         )}

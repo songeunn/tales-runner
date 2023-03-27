@@ -1,6 +1,5 @@
-import { Alert, Col, Collapse, Row, Space, Tag } from "antd";
+import { Alert, Col, Collapse, Row, Space } from "antd";
 import categories from "../data/category";
-import { COLORS } from "../styles/config";
 import DrawCtg from "./DrawTag";
 
 const { Panel } = Collapse;

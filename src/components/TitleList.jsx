@@ -1,24 +1,20 @@
-import { Divider, List, Space, Tag, Tooltip } from "antd";
+import { List, Space, Tooltip } from "antd";
 import { CaretUpFilled } from "@ant-design/icons";
 import { switchColor } from "../styles/config";
 import DrawCtg from "./DrawTag";
+import { useSelector } from "react-redux";
 
 // 칭호 리스트
 const TitleList = (options) => {
-  const { data } = options;
+  const searchedTitle = useSelector((state) => state.title);
 
   return (
     <List
       size="large"
       bordered
-      dataSource={data}
+      dataSource={searchedTitle}
       renderItem={(item, idx) => (
-        <List.Item
-          style={{
-            color: switchColor(item.color),
-          }}
-          key={idx}
-        >
+        <List.Item key={idx} className="list-item">
           <Tooltip
             placement="right"
             title={
@@ -31,7 +27,21 @@ const TitleList = (options) => {
             }
             trigger="hover"
           >
-            <Space direction="horizontal" size="middle">
+            <Space
+              direction="horizontal"
+              size="middle"
+              style={{
+                color: switchColor(item.color),
+                backgroundImage: `${
+                  item.color === "effect" &&
+                  `-webkit-linear-gradient(0deg,#FFBBEC 25%, #A9C9FF 100%)`
+                }`,
+                WebkitBackgroundClip: `${item.color === "effect" && `text`}`,
+                WebkitTextFillColor: `${
+                  item.color === "effect" && `transparent`
+                }`,
+              }}
+            >
               {item.tags && item.tags.includes("신규") ? (
                 <Space>
                   {item.title}
