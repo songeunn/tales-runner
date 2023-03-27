@@ -5,23 +5,37 @@ import { search } from "../redux/titleSlice";
 
 const SearchBar = (optionSorted) => {
   const { data } = optionSorted;
+  const [value, setValue] = useState("");
   const [results, setResults] = useState(data);
 
   const dispatch = useDispatch();
 
   const onKeyPress = (e) => {
     if (e.key === "Enter") {
-      dispatch(search(results));
+      return !value ? false : dispatch(search(results));
     }
   };
 
-  const getPanelValue = (searchText) =>
-    !searchText
-      ? dispatch(search(data))
-      : data.filter((option) => {
-          const regex = new RegExp(searchText, "gi");
-          return option.title.match(regex);
-        });
+  // const getPanelValue = (searchText) =>
+  //   !searchText
+  //     ? dispatch(search(data))
+  //     : data.filter((option) => {
+  //         const regex = new RegExp(searchText, "gi");
+  //         return option.title.match(regex);
+  //       });
+
+  const getPanelValue = (searchText) => {
+    setValue(searchText);
+    if (!searchText) {
+      dispatch(search(data));
+      return [];
+    } else {
+      return data.filter((option) => {
+        const regex = new RegExp(searchText, "gi");
+        return option.title.match(regex);
+      });
+    }
+  };
 
   return (
     <Col span={24}>
