@@ -31,6 +31,7 @@ const SearchBar = (optionSorted) => {
         onKeyDown={(e) => onKeyPress(e)}
         onSearch={(text) => setResults(getPanelValue(text))}
         placeholder="🔍 칭호를 검색해보세요"
+        allowClear
       />
     </Col>
   );

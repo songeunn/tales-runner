@@ -116,3 +116,8 @@ code {
   color: var(--text-color);
   padding: 70px;
 }
+.ant-select .ant-select-clear {
+  background-color: transparent;
+  font-size: 13px;
+  color: var(--text-color);
+}
