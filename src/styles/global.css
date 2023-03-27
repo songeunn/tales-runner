@@ -121,3 +121,6 @@ code {
   font-size: 13px;
   color: var(--text-color);
 }
+.ant-select .ant-select-clear:hover {
+  color: #b3b3bac9;
+}
