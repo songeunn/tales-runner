@@ -1,4 +1,5 @@
 // import { TagFilled } from "@ant-design/icons";
+import { TagFilled } from "@ant-design/icons";
 import { Space } from "antd";
 import CheckableTag from "antd/es/tag/CheckableTag";
 import { useState } from "react";
@@ -64,8 +65,8 @@ const FilterTags = (sortedData) => {
   };
 
   return (
-    <Space size={[5, 8]} wrap>
-      {/* <TagFilled style={{ color: "#eeeeee79", margin: "0 15px 0 10px" }} /> */}
+    <Space size={[6, 8]} wrap>
+      <TagFilled style={{ color: "#eeeeee79", margin: "0 15px 0 10px" }} />
       {tagsData.map((tag) => (
         <CheckableTag
           key={tag}
