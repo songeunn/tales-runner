@@ -139,7 +139,7 @@ code {
   color: var(--text-color);
   font-size: 13px;
   padding-block: 2px;
-  padding-inline: 8px;
+  padding-inline: 6px;
 }
 .ant-tag-checkable-checked {
   background-color: rgba(0, 0, 0, 0.8);

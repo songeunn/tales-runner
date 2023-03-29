@@ -11,11 +11,11 @@ const tagsData = [
   "신규 🔥",
   "이벤트 ✨",
   "플레이 🏃",
-  "아이템 🎁",
   "팜 🌻",
+  "아이템 🎁",
+  "기타 🎮",
   "획득 가능 🔍",
   "획득 불가 💎",
-  "기타 🎮",
 ];
 
 const FilterTags = (sortedData) => {
@@ -66,7 +66,7 @@ const FilterTags = (sortedData) => {
 
   return (
     <Space size={[0, 8]} wrap>
-      <TagFilled style={{ color: "#eeeeee79", margin: "0 15px 0 10px" }} />
+      <TagFilled style={{ color: "#eeeeee79", margin: "0 15px 0 5px" }} />
       {tagsData.map((tag) => (
         <CheckableTag
           key={tag}
