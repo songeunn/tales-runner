@@ -65,7 +65,7 @@ const FilterTags = (sortedData) => {
   };
 
   return (
-    <Space size={[6, 8]} wrap>
+    <Space size={[0, 8]} wrap>
       <TagFilled style={{ color: "#eeeeee79", margin: "0 15px 0 10px" }} />
       {tagsData.map((tag) => (
         <CheckableTag
