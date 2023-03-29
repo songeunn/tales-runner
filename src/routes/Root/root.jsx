@@ -9,6 +9,7 @@ import SearchBar from "../../components/SearchBar";
 import { useDispatch } from "react-redux";
 import { search } from "../../redux/titleSlice";
 import FilterTags from "../../components/FilterTags";
+// import Adsense from "../../components/Adsense";
 
 const Root = () => {
   const [data, setData] = useState([]);
@@ -45,6 +46,7 @@ const Root = () => {
           </Space>
         ) : (
           <Space direction="vertical" size="large">
+            {/* <Adsense client="ca-pub-6332605771069407" slot="5859381430" /> */}
             <UpdatedTitle data={updated} />
             <GuideNote />
             <SearchBar data={sortedData} />
