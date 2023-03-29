@@ -8,32 +8,33 @@ import TitleList from "../../components/TitleList";
 import SearchBar from "../../components/SearchBar";
 import { useDispatch } from "react-redux";
 import { search } from "../../redux/titleSlice";
+import FilterTags from "../../components/FilterTags";
 
 const Root = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const titleRef = ref(database, "title");
-
-    const fetchData = async () => {
-      await onValue(titleRef, (snapshot) => {
+    const fetchData = () => {
+      onValue(titleRef, (snapshot) => {
         const firebaseData = snapshot.val();
         setData(firebaseData);
-        setTimeout(() => setIsLoading(false), 500);
+        setTimeout(() => setIsLoading(false), 300);
       });
     };
     fetchData();
   }, []);
 
-  const updated =
-    data && data.filter((item) => item.tags && item.tags.includes("신규"));
+  let updated;
+  let sortedData;
 
-  const optionSorted =
-    data && data.sort((a, b) => a.title.localeCompare(b.title));
-
-  !isLoading && dispatch(search(optionSorted));
+  if (data) {
+    updated = data.filter((item) => item.tags && item.tags.includes("신규"));
+    sortedData = data.slice().sort((a, b) => a.title.localeCompare(b.title));
+    !isLoading && dispatch(search(sortedData));
+  }
 
   return (
     <Row>
@@ -46,11 +47,13 @@ const Root = () => {
           <Space direction="vertical" size="large">
             <UpdatedTitle data={updated} />
             <GuideNote />
-            <SearchBar data={optionSorted} />
-            <TitleList data={optionSorted} />
+            <SearchBar data={sortedData} />
+            <FilterTags data={sortedData} />
+            <TitleList />
           </Space>
         )}
       </Col>
+      {/* <FloatingButton /> */}
     </Row>
   );
 };

@@ -16,6 +16,7 @@
 }
 
 body {
+  background: var(--bg-color);
   margin: 0;
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -32,6 +33,7 @@ code {
 /* *************************************************************** */
 /* Ant Design CSS */
 /* *************************************************************** */
+/* List */
 .ant-list-bordered {
   /* List 외곽선 */
   border: 1px solid #464c56;
@@ -45,6 +47,8 @@ code {
   background-color: transparent;
   color: white;
 }
+
+/* Collapse */
 .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow svg {
   /* Collapse Arrow */
   color: white;
@@ -54,21 +58,26 @@ code {
   color: var(--text-color);
 }
 .ant-collapse {
-  /* Collapse */
   border: 1px solid #464c56;
   background-color: transparent;
 }
 .ant-collapse > .ant-collapse-item:last-child {
   border: none;
 }
+.guideAlert .ant-alert-message {
+  font-size: 14px;
+  font-weight: bold;
+}
 .ant-collapse .ant-collapse-content {
   /* Collapse Content */
   background-color: transparent;
   border-top: 1px solid #464c56;
   color: var(--text-color);
+  white-space: pre-line;
 }
+
+/* Tag */
 .ant-tag {
-  /* Tag */
   /* background-color: #464c56; */
   /* padding: 2px; */
   padding-inline: 6px;
@@ -123,4 +132,27 @@ code {
 }
 .ant-select .ant-select-clear:hover {
   color: #b3b3bac9;
+}
+
+/* Checkable Tag */
+.ant-tag {
+  color: var(--text-color);
+  font-size: 13px;
+  padding-block: 2px;
+  padding-inline: 8px;
+}
+.ant-tag-checkable-checked {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.ant-tag-checkable-checked:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Error Page */
+.ant-result .ant-result-title {
+  color: white;
+}
+.ant-result .ant-result-subtitle {
+  color: white;
+  white-space: pre-line;
 }

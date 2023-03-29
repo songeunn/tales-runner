@@ -17,7 +17,7 @@ const DrawCtg = (ctg, idx) => {
       );
     default:
       return (
-        <Tag color="default" key={idx}>
+        <Tag color="#c6cfdd26" key={idx}>
           {ctg}
         </Tag>
       );

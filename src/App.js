@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd";
 import ReactGA from "react-ga";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CustomRenderEmpty from "./components/CustomRenderEmpty";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID; // 환경 변수에 저장된 추적ID 가져오기
 ReactGA.initialize(gaTrackingId); // react-ga 초기화 및 debug 사용 { debug: true }
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorBoundary />,
   },
 ]);
 

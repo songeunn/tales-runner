@@ -15,9 +15,11 @@
 }
 .guideAlert {
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   padding: 10px 15px;
-  background-color: #28549cb9;
+  /* background-color: #28549cb9; */
+  background-color: #8ba6d11e;
+  border: none;
   color: var(--text-color);
 }
 .guideAlert .ant-alert-message {

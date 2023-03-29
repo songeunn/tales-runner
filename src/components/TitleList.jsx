@@ -5,7 +5,7 @@ import DrawCtg from "./DrawTag";
 import { useSelector } from "react-redux";
 
 // 칭호 리스트
-const TitleList = (options) => {
+const TitleList = () => {
   const searchedTitle = useSelector((state) => state.title);
 
   return (
@@ -32,14 +32,6 @@ const TitleList = (options) => {
               size="middle"
               style={{
                 color: switchColor(item.color),
-                backgroundImage: `${
-                  item.color === "effect" &&
-                  `-webkit-linear-gradient(0deg,#FFBBEC 25%, #A9C9FF 100%)`
-                }`,
-                WebkitBackgroundClip: `${item.color === "effect" && `text`}`,
-                WebkitTextFillColor: `${
-                  item.color === "effect" && `transparent`
-                }`,
               }}
             >
               {item.tags && item.tags.includes("신규") ? (

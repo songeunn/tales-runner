@@ -3,12 +3,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { search } from "../redux/titleSlice";
 
-const SearchBar = (optionSorted) => {
-  const { data } = optionSorted;
+const SearchBar = (sortedData) => {
+  const dispatch = useDispatch();
+
+  const { data } = sortedData;
   const [value, setValue] = useState("");
   const [results, setResults] = useState(data);
-
-  const dispatch = useDispatch();
 
   const onKeyPress = (e) => {
     if (e.key === "Enter") {
