@@ -6,6 +6,7 @@ import ReactGA from "react-ga";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CustomRenderEmpty from "./components/CustomRenderEmpty";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Adsense from "./components/Adsense";
 
 const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID; // 환경 변수에 저장된 추적ID 가져오기
 ReactGA.initialize(gaTrackingId); // react-ga 초기화 및 debug 사용 { debug: true }
@@ -32,6 +33,7 @@ function App() {
       <Container>
         <MobileContainer>
           <RouterProvider router={router} />
+          <Adsense client="ca-pub-6332605771069407" slot="5859381430" />
         </MobileContainer>
       </Container>
     </ConfigProvider>
