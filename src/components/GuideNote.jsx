@@ -4,17 +4,17 @@ import DrawCtg from "./DrawTag";
 
 const { Panel } = Collapse;
 
-// 이용 가이드 및 공지
+/** 이용 가이드 및 공지 */
 const GuideNote = () => {
   return (
     <Collapse>
-      <Panel header="이용 가이드 🌱" key="1">
+      <Panel header="📢 공지" key="1">
         <Row>
           <Space direction="vertical" size="small">
             <Col span={24}>
               <Space direction="vertical">
                 <Alert
-                  message="📢 업데이트"
+                  message="✨ 업데이트"
                   description={`03.29. 태그별 모아보기 기능이 추가되었어요! \n [이벤트] 태그의 경우 이벤트 칭호 중 현재 진행중인 이벤트에 대한 칭호만 표시했습니다`}
                   className="guideAlert"
                 />
@@ -26,14 +26,14 @@ const GuideNote = () => {
                 />
               </Space>
             </Col>
-            <Col>
+            {/* <Col>
               {categories.map((ctg, idx) => (
                 <Space direction="horizontal" key={idx}>
                   {DrawCtg(ctg.name, idx)}
                   <p>{ctg.desc}</p>
                 </Space>
               ))}
-            </Col>
+            </Col> */}
           </Space>
         </Row>
       </Panel>

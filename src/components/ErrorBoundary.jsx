@@ -2,6 +2,7 @@ import { Button, Result } from "antd";
 import React from "react";
 import { useRouteError } from "react-router-dom";
 
+/** 에러 처리 */
 const ErrorBoundary = () => {
   const error = useRouteError();
   switch (error.status) {

@@ -4,7 +4,7 @@ import { switchColor } from "../styles/config";
 import DrawCtg from "./DrawTag";
 import { useSelector } from "react-redux";
 
-// 칭호 리스트
+/** 칭호 리스트 */
 const TitleList = () => {
   const searchedTitle = useSelector((state) => state.title);
 

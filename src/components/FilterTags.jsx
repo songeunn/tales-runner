@@ -11,13 +11,15 @@ const tagsData = [
   "신규 🔥",
   "이벤트 ✨",
   "플레이 🏃",
+  "낚시 🎣",
   "팜 🌻",
   "아이템 🎁",
   "기타 🎮",
-  "획득 가능 🔍",
-  "획득 불가 💎",
+  "획득 가능 ✅",
+  "획득 불가 ❌",
 ];
 
+/** 태그 필터링 */
 const FilterTags = (sortedData) => {
   const dispatch = useDispatch();
   const [selectedTags, setSelectedTags] = useState("전체");
@@ -44,16 +46,26 @@ const FilterTags = (sortedData) => {
             !title.tags.includes("획득 불가")
           );
         case "플레이 🏃":
-          return title.tags && title.tags.includes("플레이");
+          return (
+            title.tags &&
+            !title.tags.includes("획득 불가") &&
+            title.tags.includes("플레이")
+          );
         case "아이템 🎁":
-          return title.tags && title.tags.includes("아이템");
+          return (
+            title.tags &&
+            title.tags.includes("아이템") &&
+            !title.tags.includes("획득 불가")
+          );
+        case "낚시 🎣":
+          return title.tags && title.tags.includes("낚시");
         case "팜 🌻":
           return title.tags && title.tags.includes("팜");
-        case "획득 가능 🔍":
+        case "획득 가능 ✅":
           return (
             !title.tags || (title.tags && !title.tags.includes("획득 불가"))
           );
-        case "획득 불가 💎":
+        case "획득 불가 ❌":
           return title.tags && title.tags.includes("획득 불가");
         case "기타 🎮":
           return !title.tags;

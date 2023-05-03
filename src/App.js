@@ -51,6 +51,7 @@ const Container = styled.div`
 `;
 
 const MobileContainer = styled.div`
+  position: relative;
   max-width: 420px;
   width: 100%;
   padding: 20px;
@@ -64,4 +65,5 @@ const MobileContainer = styled.div`
     display: none; /* Chrome, Safari, Opera, Edge */
   }
 `;
+
 export default App;

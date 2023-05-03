@@ -2,7 +2,7 @@ import { Badge, Carousel, Space } from "antd";
 import { StarFilled } from "@ant-design/icons";
 import { switchColor } from "../styles/config";
 
-// 업데이트 된 칭호
+/** 업데이트 된 칭호 리스트 */
 const UpdatedTitle = (updated) => {
   const { data } = updated;
 
@@ -16,7 +16,12 @@ const UpdatedTitle = (updated) => {
       >
         {data.map((newTitle, idx) => (
           <Space key={idx}>
-            <h3 style={{ color: switchColor(newTitle.color) }}>
+            <h3
+              key={idx}
+              style={{
+                color: switchColor(newTitle.color),
+              }}
+            >
               {newTitle.tags.includes("유니크") ? (
                 <Space>
                   <StarFilled />

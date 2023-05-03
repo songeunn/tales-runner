@@ -16,14 +16,6 @@ const SearchBar = (sortedData) => {
     }
   };
 
-  // const getPanelValue = (searchText) =>
-  //   !searchText
-  //     ? dispatch(search(data))
-  //     : data.filter((option) => {
-  //         const regex = new RegExp(searchText, "gi");
-  //         return option.title.match(regex);
-  //       });
-
   const getPanelValue = (searchText) => {
     setValue(searchText);
     if (!searchText) {

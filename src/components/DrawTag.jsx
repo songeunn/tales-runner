@@ -1,6 +1,7 @@
 import { Tag } from "antd";
 import { COLORS } from "../styles/config";
 
+/** 분류별 태그 색상 표시 */
 const DrawCtg = (ctg, idx) => {
   switch (ctg) {
     case "획득 불가":

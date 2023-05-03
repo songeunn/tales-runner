@@ -1,6 +1,7 @@
 import { FrownOutlined } from "@ant-design/icons";
 import React from "react";
 
+/** 검색 시 빈값 표출 */
 const CustomRenderEmpty = () => {
   return (
     <div className="render-empty">
