@@ -11,9 +11,6 @@ import Root from "./routes/Root/root";
 import ErrorBoundary from "./components/ErrorBoundary";
 import NoticePage from "./routes/NoticePage";
 
-const rootElement = document.getElementById("root");
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,28 +24,34 @@ const router = createBrowserRouter([
   },
 ]);
 
-if (rootElement.hasChildNodes()) {
-  hydrate(
-    <Provider store={store}>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
-    </Provider>,
-    rootElement
-  );
-} else {
-  root.render(
+// const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// if (rootElement.hasChildNodes()) {
+//   hydrate(
+//     <Provider store={store}>
+//       <RouterProvider router={router}>
+//         <App />
+//       </RouterProvider>
+//     </Provider>,
+//     rootElement
+//   );
+// } else {
+//   root.render(
+//     <Provider store={store}>
+//       <RouterProvider router={router}>
+//         <App />
+//       </RouterProvider>
+//     </Provider>
+//   );
+// }
+
+root.render(
+  <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router}>
         <App />
       </RouterProvider>
     </Provider>
-  );
-}
-// root.render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <App />
-//     </Provider>
-//   </React.StrictMode>
-// );
+  </React.StrictMode>
+);
