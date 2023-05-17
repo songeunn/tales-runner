@@ -38,7 +38,7 @@ if (rootElement.hasChildNodes()) {
   root.render(
     <Provider store={store}>
       <RouterProvider router={router} />
-      {/* <App /> */}
+      <App />
     </Provider>
   );
 }
