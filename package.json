@@ -32,8 +32,7 @@
     "include": [
       "/",
       "/notice"
-    ],
-    "skipThirdPartyRequests": true
+    ]
   },
   "eslintConfig": {
     "extends": [
