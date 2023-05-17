@@ -51,7 +51,7 @@ const Root = () => {
               <SearchBar data={sortedData} />
               <FilterTags data={sortedData} />
               <TitleList />
-              <GoogleAd />
+              {/* <GoogleAd /> */}
             </Space>
           )}
         </Col>

@@ -30,15 +30,18 @@ const router = createBrowserRouter([
 if (rootElement.hasChildNodes()) {
   hydrate(
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
     </Provider>,
     rootElement
   );
 } else {
   root.render(
     <Provider store={store}>
-      <RouterProvider router={router} />
-      <App />
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
     </Provider>
   );
 }
