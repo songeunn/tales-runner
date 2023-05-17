@@ -1,5 +1,5 @@
 import { Tag } from "antd";
-import { COLORS } from "../styles/config";
+import { COLORS } from "../../styles/config";
 
 /** 분류별 태그 색상 표시 */
 const DrawCtg = (ctg, idx) => {

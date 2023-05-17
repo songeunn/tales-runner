@@ -6,9 +6,26 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { hydrate } from "react-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Root from "./routes/Root/root";
+import ErrorBoundary from "./components/ErrorBoundary";
+import NoticePage from "./routes/NoticePage";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorBoundary />,
+  },
+  {
+    path: "/notice",
+    element: <NoticePage />,
+    errorElement: <ErrorBoundary />,
+  },
+]);
 
 if (rootElement.hasChildNodes()) {
   hydrate(
@@ -20,7 +37,8 @@ if (rootElement.hasChildNodes()) {
 } else {
   root.render(
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
+      {/* <App /> */}
     </Provider>
   );
 }

@@ -1,6 +1,6 @@
 import { Badge, Carousel, Space } from "antd";
 import { StarFilled } from "@ant-design/icons";
-import { switchColor } from "../styles/config";
+import { switchColor } from "../../styles/config";
 
 /** 업데이트 된 칭호 리스트 */
 const UpdatedTitle = (updated) => {

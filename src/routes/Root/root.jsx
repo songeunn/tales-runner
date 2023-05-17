@@ -3,13 +3,13 @@ import { Col, Row, Space, Spin } from "antd";
 import { database } from "../../firebase";
 import { ref, onValue } from "firebase/database";
 import UpdatedTitle from "../../components/UpdatedTitle";
-import GuideNote from "../../components/GuideNote";
 import TitleList from "../../components/TitleList";
 import SearchBar from "../../components/SearchBar";
 import { useDispatch } from "react-redux";
 import { search } from "../../redux/titleSlice";
 import FilterTags from "../../components/FilterTags";
 import GoogleAd from "../../components/GoogleAd";
+import Layout from "../../components/Layout";
 
 const Root = () => {
   const [data, setData] = useState([]);
@@ -38,26 +38,25 @@ const Root = () => {
   }
 
   return (
-    <Row>
-      <Col span={24}>
-        {isLoading ? (
-          <Space className="loading">
-            <Spin size="large" />
-          </Space>
-        ) : (
-          <Space direction="vertical" size="large">
-            {/* <GoogleAd /> */}
-            <UpdatedTitle data={updated} />
-            <GuideNote />
-            <SearchBar data={sortedData} />
-            <FilterTags data={sortedData} />
-            <TitleList />
-            <GoogleAd />
-          </Space>
-        )}
-      </Col>
-      {/* <FloatingButton /> */}
-    </Row>
+    <Layout>
+      <Row>
+        <Col span={24}>
+          {isLoading ? (
+            <Space className="loading">
+              <Spin size="large" />
+            </Space>
+          ) : (
+            <Space direction="vertical" size="large">
+              <UpdatedTitle data={updated} />
+              <SearchBar data={sortedData} />
+              <FilterTags data={sortedData} />
+              <TitleList />
+              {/* <GoogleAd /> */}
+            </Space>
+          )}
+        </Col>
+      </Row>
+    </Layout>
   );
 };
 

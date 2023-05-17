@@ -1,7 +1,7 @@
 import { List, Space, Tooltip } from "antd";
 import { CaretUpFilled } from "@ant-design/icons";
-import { switchColor } from "../styles/config";
-import DrawCtg from "./DrawTag";
+import { switchColor } from "../../styles/config";
+import DrawCtg from "../DrawCtg";
 import { useSelector } from "react-redux";
 
 /** 칭호 리스트 */

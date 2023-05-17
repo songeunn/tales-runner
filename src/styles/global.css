@@ -30,6 +30,16 @@ code {
     monospace;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* *************************************************************** */
 /* Ant Design CSS */
 /* *************************************************************** */

@@ -1,7 +1,7 @@
 import { AutoComplete, Col } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { search } from "../redux/titleSlice";
+import { search } from "../../redux/titleSlice";
 
 const SearchBar = (sortedData) => {
   const dispatch = useDispatch();
