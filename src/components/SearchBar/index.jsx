@@ -32,7 +32,6 @@ const SearchBar = (sortedData) => {
   return (
     <Col span={24}>
       <AutoComplete
-        className="search-bar"
         size="large"
         onKeyDown={(e) => onKeyPress(e)}
         onSearch={(text) => setResults(getPanelValue(text))}

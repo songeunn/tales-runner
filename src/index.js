@@ -5,16 +5,22 @@ import "../src/styles/custom.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import { hydrate } from "react-dom";
+// import { hydrate } from "react-dom";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./routes/Root/root";
 import ErrorBoundary from "./components/ErrorBoundary";
 import NoticePage from "./routes/NoticePage";
+import ToolsPage from "./routes/ToolsPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorBoundary />,
+  },
+  {
+    path: "/tools",
+    element: <ToolsPage />,
     errorElement: <ErrorBoundary />,
   },
   {
@@ -47,11 +53,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // }
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
-    </Provider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
+    <RouterProvider router={router}>
+      <App />
+    </RouterProvider>
+  </Provider>
+  // </React.StrictMode>
 );

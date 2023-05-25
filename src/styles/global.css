@@ -166,3 +166,19 @@ a {
   color: white;
   white-space: pre-line;
 }
+
+/* Input */
+input.ant-input {
+  background-color: transparent;
+  color: var(--text-color);
+}
+input.ant-input::placeholder {
+  color: var(--border-color);
+}
+input.ant-input-number-input {
+  background-color: transparent;
+  color: var(--text-color) !important;
+}
+input.ant-input-number-input::placeholder {
+  color: var(--border-color) !important;
+}

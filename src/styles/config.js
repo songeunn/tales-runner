@@ -8,6 +8,7 @@ export const COLORS = {
   LIGHTORANGE: "orange",
   YELLOW: "yellow",
   GREEN: "#00ff00",
+  LIGHTBLUE: "#30cbd8",
   BLUE: "deepskyblue",
   MINT: "mediumspringgreen",
   PURPLE: "mediumpurple",
@@ -35,6 +36,9 @@ export const switchColor = (color) => {
       break;
     case "green":
       realColor = COLORS.GREEN;
+      break;
+    case "lightBlue":
+      realColor = COLORS.LIGHTBLUE;
       break;
     case "blue":
       realColor = COLORS.BLUE;

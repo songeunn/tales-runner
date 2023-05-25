@@ -36,3 +36,27 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+/**************************************/
+/* Counter Page */
+/**************************************/
+.calculate-card {
+  display: flex;
+  justify-content: center;
+  background: #4a4c505e;
+  border: none;
+  color: var(--text-color);
+}
+.counter-button {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+.counter-input {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+.counter-input .ant-input-clear-icon {
+  color: var(--text-color);
+}

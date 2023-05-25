@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../../styles/config";
-import { NotificationOutlined, SearchOutlined } from "@ant-design/icons";
+import {
+  InboxOutlined,
+  NotificationOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
@@ -11,6 +15,13 @@ const NavigationBar = () => {
         <NavLink>
           <SearchOutlined style={{ fontSize: "20px" }} />
           <span>칭호</span>
+        </NavLink>
+      </Link>
+
+      <Link to="/tools">
+        <NavLink>
+          <InboxOutlined style={{ fontSize: "20px" }} />
+          <span>도구</span>
         </NavLink>
       </Link>
 
@@ -48,7 +59,7 @@ const NavLink = styled.div`
   gap: 4px;
   color: ${COLORS.BORDER};
   font-size: 12px;
-  padding: 10px 70px;
+  padding: 10px 30px;
   color: ${COLORS.TEXT};
 `;
 export default NavigationBar;
