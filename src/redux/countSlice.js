@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { COUNT_LIST } from "../routes/ToolsPage";
+
+const COUNT_LIST = "COUNT_LIST";
 
 const initialState = JSON.parse(localStorage.getItem(COUNT_LIST))
   ? JSON.parse(localStorage.getItem(COUNT_LIST))

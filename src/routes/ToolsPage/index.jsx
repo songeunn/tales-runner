@@ -14,7 +14,7 @@ import uuid from "react-uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { saveCount } from "../../redux/countSlice";
 
-export const COUNT_LIST = "COUNT_LIST";
+const COUNT_LIST = "COUNT_LIST";
 
 const ToolsPage = () => {
   const [inEditing, setInEditing] = useState(false);

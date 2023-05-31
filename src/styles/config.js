@@ -11,7 +11,8 @@ export const COLORS = {
   LIGHTBLUE: "#30cbd8",
   BLUE: "deepskyblue",
   MINT: "mediumspringgreen",
-  PURPLE: "mediumpurple",
+  NAVY: "#8e8df5",
+  PURPLE: "#c081f6",
   ERROR: "#fa5252",
   UNIQUE: "#7950f2",
 };
@@ -45,6 +46,9 @@ export const switchColor = (color) => {
       break;
     case "mint":
       realColor = COLORS.MINT;
+      break;
+    case "navy":
+      realColor = COLORS.NAVY;
       break;
     case "purple":
       realColor = COLORS.PURPLE;
